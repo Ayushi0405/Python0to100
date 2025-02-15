@@ -235,6 +235,34 @@ a=[1,2,3,4,5]
 print(1 in a)
 print(6 not in a)
 
+#If-Else
+#correct email:Krishna@gmail.com
+#password-1234
+
+email=input("Enter your email:")
+password=input("Enter your password:")
+if '@' in email:
+    password=input("Enter your password:")
+    if email=="Krishna@gmail.com" and password=="1234":
+        print("Login Successful")
+    elif email=="Krishna@gmail.com" and password!="1234":
+        print("Invalid Password")
+        password=input("Enter your password:")
+        if password=="1234":
+            print("Login Successful")
+        else:
+            print("Login Failed")
+    else:
+        print("Login Failed")
+else:
+    print("Invalid email")
+
+#If-Else-If->elif
+
+
+
+
+
 
 
 
