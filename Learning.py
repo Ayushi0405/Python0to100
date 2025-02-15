@@ -408,6 +408,148 @@ os.getcwd() #current working directory
 os.listdir() #list of all files and folders in the current directory
 os.mkdir("Test") #create a directory
 
+'''STRINGS
+
+-> strings are sequence of characters
+-> In Python specifically,strings are a sequence of Unicode Characters
+-> creating a string
+-> Accessing Strings
+-> Adding Chars to strings
+-> Editing strings
+-> Deleting strings
+->Operations on stringd
+->String Functions
+'''
+#creating
+x="Krishna"
+"It's a beautiful day"
+c='''This is Krishna
+    This is Keishna'''
+print(x)
+print(c)
+c=str("Hello")
+
+#Accessing Substrings from a String
+
+#Concept of indexing
+c="hello"
+print(c[0])
+print(c[1]) #positive indexing
+print(c[-1]) #negative indexing->from right to left
+print(c[-2])
+
+#Slicing
+c="Hello World"
+print(c[0:5]) #Hello
+print(c[6:]) #World
+print(c[2:6:2])#lo
+print(c[0:6:-1])# never take negative step with positive numbers\
+print(c[::-1])#reverse the string
+
+#Editing and Deleting Strings
+#Strings are immutable
+
+del c #delete the string-> partially delete not possible and reassign possible
+
+'''Operations on Strings
+1.Arithmetic Operations
+2.Relational Operations
+3.Logical Operations
+4.Loops on strings
+5.Membership Operations'''
+
+"hello"+"world" #concatenation
+"hello"*3 #hellohellohello
+"hello" in "hello world" #True
+print("*"*50)
+print("Hello"*5)
+"Mumbai">"Pune"#Comparison in Lexicographical order->False
+"kol"<"KOL"# small letters baad m aate h
+"hello" and "world" #world
+#Empty string is always false
+#Non-empty string is always true
+"hello" or "world" #hello
+'h' in c #True
+
+#String Functions
+'''Commonly used string functions
+1.len()
+2.count()
+3.max
+4.min
+5.sorted'''
+
+c="kolkata"
+len(c)#7
+
+max(c)#t
+min(c)#a
+sorted(c)#['a','k','k','l','o','t','a']-> in ascending order wrt ASCII value
+
+#Capitalize/Title/Lower/Swapcase
+
+"He is krishna".capitalize() #He is krishna
+"He is krishna".title() #He Is Krishna
+"He is krishna".lower() #he is krishna
+"He is krishna".upper() #HE IS KRISHNA
+"He is krishna".swapcase() #hE IS KRISHNA
+
+#Count->Find the frequency of substring
+"hello world".count('l') #3
+
+#Find->Find the index of substring->first occurence
+"hello world".find('l') #2->if not found then -1
+
+#Index->Find the index of substring->first occurence
+"hello world".index('l') #2->if not found then error
+
+#endswith,startswith
+"hello world".endswith('d') #True
+"hello world".startswith('h') #True 
+
+#format
+"Hello my name is {} and I am {}".format("Krishna","God")
+
+"Hello my name is {1} and I am {0}".format("Krishna","God")
+
+"Hello my name is {name} and I am {status}".format(name="Krishna",status="God")
+
+#isalnum->check if all characters are alphanumeric
+"hello123".isalnum() #True
+
+#isalpha->check if all characters are alphabets
+"hello".isalpha() #True
+
+#isdigit->check if all characters are digits
+"123".isdigit() #True
+
+#isdecimal->check if all characters are decimals
+"123".isdecimal() #True
+
+#isidentifier->check if string is a valid identifier
+"hello".isidentifier() #True    
+
+#Split->Split the string into a list
+"Hello World".split() #['Hello','World']
+
+"Hello,World".split(",") #['Hello','World']
+
+"This is Krishna".split("is") #['Th',' Kr','hna']
+
+#Join->Join the list into a string
+" ".join(['Hello','World']) #Hello World
+
+"/".join(['Hello','World']) #Hello/World
+
+#Replace->Replace the substring with another substring
+"Hello World".replace("World","Krishna") #Hello Krishna
+
+#Strip->Remove the leading and trailing whitespaces
+name="   Krishna   "
+name.strip() #Krishna
+
+
+
 
 
 
