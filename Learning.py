@@ -257,7 +257,74 @@ if '@' in email:
 else:
     print("Invalid email")
 
-#If-Else-If->elif
+#Loops->
+#while,for,do-while
+
+# while condition:
+#     code
+
+number=int(input("Enter a number:"))
+while number<10:
+    print(number)
+    number+=1
+
+#Guessing Game
+import random
+jackpot=random.randint(1,100)
+guess=int(input("Enter your guess:"))
+counter=1
+while guess != jackpot:
+    if(guess>jackpot):
+        print("Guess lower")
+    else:
+        print("Guess higher")
+    
+    guess=int(input("Enter your guess:"))
+    counter+=1
+print("You guessed it right")
+print("Number of attempts:",counter)
+
+#For Loop
+# for i in range(start,stop,step):
+
+#range function
+range(1,11) #1,2,3,4,5,6,7,8,9,10
+range(1,11,2) #1,3,5,7,9
+
+for i in range(10,0,-1):
+    print(i)
+
+for i in [1,2],[3,4],[5,6]:
+    print(i)
+
+for i in (1,2,3,4,5):
+    print(i)
+
+#Nested Loop
+for i in range(1,rows+1):
+    for j in range(0,i):
+        print("*",end="")
+    print("")
+
+#Break
+for i in range(1,11):
+    if i==5:
+        break
+    print(i)
+
+#Continue -> Skip the current iteration wher condition met
+
+for i in range(1,11):
+    if i==5:
+        continue
+    print(i)
+
+for i in range(1,11):
+    pass #Do nothing
+ 
+
+
+
 
 
 
