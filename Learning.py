@@ -548,6 +548,200 @@ sorted(c)#['a','k','k','l','o','t','a']-> in ascending order wrt ASCII value
 name="   Krishna   "
 name.strip() #Krishna
 
+'''
+LISTS may or may not be homogeneous while array is homogeneous
+Array stores data on contiguous memory locations
+List stores data on non-contiguous memory locations
+Arrays are much faster while lists are programmer friendly
+Lists are mutable
+'''
+L=[1,2,3,4,5]
+L=[1,2,3,4,5,'Krishna']
+
+#Multidimensional List
+#2D
+L=[[1,2,3],[4,5,6],[7,8,9]]
+#3D
+L=[[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]]
+
+L=list("Krishna") #['K','r','i','s','h','n','a']
+
+L.append(6) #Add an element at the end of the list
+L.insert(2,5) #Add an element at a specific index
+L.extend([7,8,9]) #Add multiple elements at the end of the list  
+
+#Delete
+del L
+del L[2]
+del L[-4]
+del L[-3:]
+
+L.remove("hello") # we use remove if we don't know the index position
+
+L.pop() # remove last element
+
+L.clear() #List koo empty krta h
+
+L=[1,2,3,4]
+L1=[5,6,7,8]
+
+L+L1
+for i in L1:
+    print(i)
+4 in L1
+
+#Functions in List
+len(L)
+min(L)
+max(L)
+sorted(L)#[1,2,3,4]
+#Sorted is not a permanent operation
+sorted(L,reverse=True) #[4,3,2,1]
+L.sort() # sort is a permanent operation
+
+L.index[3]
+
+sample="today has been great for me"
+print(sample.split())
+L=[]
+for i in sample.split():
+    print(i.capitalize())
+    L.append(i.capitalize())
+print(L)
+print("".join(L))
+ 
+ #Tuples
+
+ #Creating
+T1=()
+T2=(1,2,3,4,5)
+T3=("Hello",2,3,4,5)
+#Single Item Tuple
+T4=("hello",)
+T6=tuple("Goa")
+
+#Access
+T2[0] #1
+T2[1] # 2
+
+#Edit
+T2[0]=100 #Tupel does not support editing.Tuples are immutable
+del T1 #deleting whole tuple is possible
+T2=(1,2,3,4,5)
+T3=("Hello",4,5,6)
+T2+T3
+T2*3
+for i in T2:
+    print(i)
+
+1 in T2 #True
+len[T2] #5
+min[T2]#1
+max[T2] #5
+sum[T2] #15
+sorted[T2] #[1,2,3,4,5]
+
+#Tuples are read onli data types
+
+#Sets '''
+# 1->Sets do not allow duplicates
+# 2-> Sets have no indexing/slicing
+# 3->Sets don't allow mutable data types
+# 4->Sets itself is mutable data type'''
+
+#Empty set creation
+s1={}#Not empty set
+type(s1) #dict
+s1=set() #empty set
+s2={"hello",4.5,True}
+S3={1,1,2,2,3,3} #{1,2,3}
+s4={[1,2,3],"Hello"} #Error
+s4={(1,2,3),"Hello"} #{'Hello',(1,2,3)}
+#Sets have no indexing
+#They follow Hashing
+s5={{1},{2}}
+
+#Access Items
+s1[0]#Sets do not support indexing
+
+#Add Items
+S1={2,3,100,5,4}
+S1.add(6)#{2,3,100,5,4,6}
+
+#Delete items->del,remove,pop
+del s2 #Delete whole set
+s1.remove(100) #{2,3,5,4}
+
+s1.pop()#2
+s1.pop()#3
+
+#Sets doesn't support concatenation and multiplication but looping and membership functions are available
+
+for i in s1:
+    print(i)
+
+#Functions
+len(S1) #5
+min(S1) #1
+max(S1) #5
+sum(S1) #15
+sorted(S1) #[1,2,3,4,5]
+sorted(S1,reverse=True)
+
+#Functions specific to set
+S1={1,2,3,4,5}
+S2={3,4,5,6,7}
+S1.union(S2) #{1,2,3,4,5,6,7}
+S1.Intersection(S2) #{3,4,5}
+S1.difference(S2)#{1,2}
+S2.difference(S1)#{6,7}
+S1.symmetric_difference(S2)#{1,2,6,7}
+S1.isdisjoint(S2)#False
+
+#Dictionary
+
+{"Name":"Nitish","Gender":"Male"}
+
+#Dictionary has no indexing
+# Dictionary is a mutable types
+# Keys->immutable,values->They can be mutable
+# Keys should be unique
+# Mutable ->List/Sets/Dictionary
+#Immutable ->Strings/tuples/int/float/Boolean/complex
+
+D1={[1,2,3]:"Nitish"} #Error as list is mutable
+D1={(1,2,3):"Nitish"} # {(1,2,3):"Nitish"}
+D2={"Name":"Rahul","Name":"Rohit"} #{'Name':'Rohit'}
+D3={"Name":"Krishna","College":"CMU","Marks":{"AI":56,"DS":54}}
+
+#Access item from a dict->from keys
+D3['Marks']
+D3['Marks']['DS']
+D3['Marks']['DS']=64
+D3.get('Name')
+
+
+del D3
+del D3['College']
+D3.clear()
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
