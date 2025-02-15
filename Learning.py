@@ -115,6 +115,63 @@ print(list('Krishna'))
 
 #Type conversion is not a permanent operation
 
+'''
+LITERALS
+-> Literal is a raw data given in a variable.In Python there are various types of literals they are as follows:
+1.Numeric Literals
+2.String Literals
+3.Boolean Literals
+4.Special Literals'''
+
+#Numeric Literals
+a=0b1010 #Binary Literals
+b=100 #Decimal Literal
+c=0o310 #Octal Literal
+d=0x12c #Hexadecimal Literal
+
+#Float Literal
+float_1=10.5
+float_2=1.5e2 #1.5*10^2
+float_3=1.5e-2 #1.5*10^-2
+
+#Complex Literal
+x=3.14j
+
+
+print(a,b,c,d)
+print(float_1,float_2,float_3)
+print(x,x.imag,x.real)
+
+#String Literals
+strings='This is Krishna'
+strings="This is Krishna"
+char="C"
+multiple_line_string="""This is Krishna
+                        This is Keishna"""
+unicode=u"\u00dcnic\u00f6de"
+raw_string=r"raw \n string"
+print(strings)
+print(strings)
+print(char)
+print(multiple_line_string)
+print(unicode)
+print(raw_string)
+
+#Boolean Literals
+
+a=True + 4
+b=False + 10
+
+print("a:",a)
+print("b:",b)
+
+#Special Literals
+a=None #None is used to define a null value or no value at all
+print(a)
+
+
+
+
 
 
 
