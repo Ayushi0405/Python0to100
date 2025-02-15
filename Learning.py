@@ -321,9 +321,92 @@ for i in range(1,11):
 
 for i in range(1,11):
     pass #Do nothing
- 
 
+#Built-in Functions
 
+#Print
+print("Hello World")
+
+#input
+name=input("Enter your name:")
+print(name)
+
+#type
+print(type(10))
+
+#int etc.
+print(int(5.5))
+
+#abs->modulus function
+print(abs(-5))
+
+#pow->power function
+print(pow(2,3))
+
+#min,max
+print(min(1,2,3,4,5))
+print(max(1,2,3,4,5))
+
+#round
+print(round(5.5))
+
+#divmod(x//y,x%y)
+print(divmod(9,2))
+
+#bin,oct,hex
+print(bin(10))
+print(oct(10))
+print(hex(10))
+
+#id-> Memory m address
+a=10
+print(id(a))
+
+#ord->ASCII value
+print(ord('A'))
+
+#len
+print(len("Krishna"))
+
+#sum
+print(sum([1,2,3,4,5]))
+
+#help->Documentation padhna hoo
+help(print)
+
+#Built-in Modules
+'''
+MODULES-> same as a code library
+A file containing a set of functions you want to include in your application
+Examples of python modules
+1.math
+2.random
+3.os
+4.time
+'''
+help('modules')#List of all modules
+import math
+math.factorial(5)
+math.sqrt(25)
+math.pow(2,3)
+math.pi
+math.e
+
+random.shuffle([1,2,3,4,5]) #permantely shuffle the list
+
+import time
+time.time() #current time in seconds from 1 jan 1970 
+
+time.ctime() #current time
+
+print("Hello")
+time.sleep(5)   #wait for 5 seconds
+print("World")
+
+import os
+os.getcwd() #current working directory  
+os.listdir() #list of all files and folders in the current directory
+os.mkdir("Test") #create a directory
 
 
 
