@@ -1,0 +1,1 @@
+print("India","USA","UK","Canada","Australia",sep=",")
