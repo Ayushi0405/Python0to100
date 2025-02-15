@@ -170,6 +170,70 @@ a=None #None is used to define a null value or no value at all
 print(a)
 
 
+''' OPERATORS
+->Operators are special symbols in Python that carry out arithmetic or logical computation.
+Python has following types of operators:
+1.Arithmetic Operators
+2.Comparison(Relational) Operators
+3.Logical(Boolean) Operators
+4.Bitwise Operators
+5.Assignment Operators
+6.Identity Operators
+7.Membership Operators
+'''
+
+x=5
+y=2
+print(x+y) #Addition
+print(x-y) #Subtraction
+print(x*y) #Multiplication
+print(x/y) #Division
+print(x//y) #Floor Division
+print(x%y) #Modulus
+print(x>y)
+print(x<y)
+print(x==y)
+print(x!=y)
+print(x>=y)
+
+#Logical Operators
+a=True
+b=False
+print(a and b)
+print(a or b)
+print(not a)
+
+#Bitwise Operators->Image Processing
+a=10
+b=4 
+print(a&b) #value=0
+print(a|b) #value=14
+print(x>>2) #value=1
+print(x<<2) #value=20
+print(~x) #value=-6
+
+#Assignment Operators
+a=5
+a+=5
+a-=5
+a*=5
+a/=5
+a//=5
+
+# a++,++a,--a,a-- are not supported in python
+
+#Identity Operators
+a=5
+b=5
+print(a is b) #True->Both are at same memory location
+#If false then both are at different memory location
+
+print(a is not b)
+
+#Membership Operators -> Used to test if a sequence is presented in an object
+a=[1,2,3,4,5]
+print(1 in a)
+print(6 not in a)
 
 
 
