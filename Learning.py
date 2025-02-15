@@ -81,6 +81,40 @@ be commands or parameters.every programming language has a set of keywords that 
 import keyword
 print(keyword.kwlist)
 
+'''
+IDENTIFIERS
+-> A Python identifier is a name used to identify a variable,function,class,module or other object.
+--Rules for writing identifiers
+->can only start with an alphabet or _
+-> followed by 0 or more letter,_ and digits
+-> keywords cannot be used as identifiers'''
+
+#Taking Input
+input(prompt="Enter your name:") 
+
+first_num=input("Enter first number:") #User input is always a string
+second_num=input("Enter second number:")
+result = first_num+second_num
+print(result)
+
+#type
+type(first_num)
+type(second_num)
+type(result)
+
+#Type Conversion
+#implicit type conversion -> done by python
+print(4+5.5)
+
+#explicit type conversion -> done by user
+result=int(first_num)+int(second_num)
+print(result)
+
+print(int('4')+float('5.5'))
+print(list('Krishna'))
+
+#Type conversion is not a permanent operation
+
 
 
 
