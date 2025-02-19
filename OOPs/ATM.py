@@ -23,9 +23,17 @@ class Atm:
 
 
     def __init__(self):
-        self.pin=""
-        self.balance=0
+        self.__pin=""
+        self.__balance=0
         self.menu()
+    def get_pin(self):
+        return self.__pin
+    def set_pin(self,new_pin):
+        if type(new_pin)==str:
+            self.__pin=new_pin
+            print("Pin changed")
+        else:
+            print("Not allowed")
     def menu(self):
         while True:
     
@@ -50,24 +58,24 @@ class Atm:
 
 
     def create_pin(self):
-        self.pin= input("Enter your pin")
+        self.__pin= input("Enter your pin")
         print("Pin set successfully")
 
     def deposit(self):
         temp=input("enter your pin")
-        if temp==self.pin:
+        if temp==self.__pin:
             amount=int(input("Enter the amount"))
-            self.balance=self.balance+amount
+            self.__balance=self.__balance+amount
             print("Deposit Successfully")
         else:
             print("Invalid Pin")
 
     def withdraw(self):
         temp=input("enter your pin")
-        if temp==self.pin:
+        if temp==self.__pin:
             amount=int(input("enter the amount"))
             if amount<self.balance:
-                self.balance=self.balance-amount
+                self.__balance=self.__balance-amount
                 print("Operation Successful")
             else:
                 print("Insufficient amount")
@@ -76,8 +84,8 @@ class Atm:
 
     def check_balance(self):
         temp=input("Enter the pin")
-        if temp==self.pin:
-            print(self.balance)
+        if temp==self.__pin:
+            print(self.__balance)
         else:
             print("Invalid Pin")
 sbi=Atm()
@@ -87,9 +95,58 @@ class Fraction:
     def __init__(self,n,d):
         self.num=n
         self.den=d
+    def __str__(self):
+        return "{}/{}".format(self.num,self.den)
+    def __add__(self,other):
+        temp_num=self.num*other.den + other.num*self.den
+        temp_den=self.den *other.den
+        return "{}/{}".format(temp_num,temp_den)
 from fraction import Fraction
 x=Fraction(4,5)
 type(x)
 
+'''
+#Instance variable:It is a variable whose value is different for different object
+sbi.balance is also accessible,Data koo open chhodna is not a good practice
+#Encapsulation: double underscore lagake method koo b and variable koo b hide kr sakte h
+sbi.__balance will still accessible 
+Nothing in python is truly private
 
-    
+--Getter and Setter Methods
+--Object create krte time object koo jis variable m store krte h voh reference variable
+for ex: sbi=Atm(),here sbi is reference variable
+
+
+'''
+class Customer:
+    def __init__(self,name,gender):
+        self.name=name
+        self.gender=gender
+def greet(customer):
+    if customer.gender=="Male":
+        print("Hello",customer.name,"sir")
+    else:
+        print("Hello",customer.name,"ma'am")
+cust=Customer("Krishna","Male")
+greet(cust) #Object pass kr rhe,Function koo object b de sakte h
+
+class Customerr:
+    def __init__(self,name):
+        self.name=name
+    def greet(customer):
+        print(id(customer))
+        customer.name="Nistish"
+        print(customer.name)
+cust=Customerr("Radha")
+print(id(cust))
+
+greet(cust) 
+
+print(cust.name)
+#class ke objects are also mutable like lists,dict and sets
+
+
+
+
+
+     
