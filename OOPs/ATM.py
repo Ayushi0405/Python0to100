@@ -18,14 +18,32 @@ Magic method apne aap trigger hoo jaata h
 // Class ek method apne class ke dusre method koo access nhi kr sakta uske liye object chahiye
 nd yeh self k through aata h
 
+#Static/Class variable:ek aesa variable  jiski value har object k liye same h
+Static variable is always defined outside constructor
+
 '''
+
 class Atm:
+    #Static/class variable
+    __counter=1
 
 
     def __init__(self):
         self.__pin=""
         self.__balance=0
-        self.menu()
+        self.sno=Atm.counter
+        Atm.__counter=Atm.__counter+1
+        #self.menu()
+    #Static Method
+    @staticmethod
+    def get_counter():
+        return Atm.__counter
+    @staticmethod
+    def set_counter(new):
+        if type(new)==int:
+            Atm.__counter=new
+        else:
+            print("Not allowed")
     def get_pin(self):
         return self.__pin
     def set_pin(self,new_pin):
@@ -144,6 +162,146 @@ greet(cust)
 
 print(cust.name)
 #class ke objects are also mutable like lists,dict and sets
+
+class Buyer:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def intro(self):
+        print("I am",self.name,"and I am",self.age)
+c1=Buyer("Nitish",34)
+c2=Buyer("Ankit",45)
+c3=Buyer("Neha",32)
+L=[c1,c2,c3]
+for i in L:
+    i.intro()
+'''
+Relationship->Aggregation and Inheritance
+Aggregation-> has a relationship Ex: Customer has a address
+Inheritance-> is a relationship'''
+
+class Customer:
+    def __init__(self,name,gender,address):
+        self.name=name
+        self.gender=gender
+        self.address=address
+    def edit_profile(self,new_name,new_city,new_pin,new_state):
+        self.new_name=new_name
+        self.address.change_address(new_city,new_pin,new_state)
+
+    
+class address:
+    def __init__(self,city,pincode,state):
+        self.city=city
+        self.pincode=pincode
+        self.state=state
+    def change_address(self,new_city,new_pin,new_state):
+        self.city=new_city
+        self.pincode=new_pin
+        self.state=new_state
+
+add=address("Kolkata",98089,"WB")
+cust=Customer("Nitish","Male",add)
+cust.edit_profile("Ayushman","Gurgaon",122011,"haryana")
+
+print(cust.address.pincode)
+
+#Private members are not inherited
+class User:
+    def login(self):
+        print("login")
+    def register(self):
+        print("Register")
+class Student(User):
+    def enroll(self):
+        print("Enroll")
+    def review(self):
+        print("Review")
+
+stu=Student()
+stu.enroll()
+stu.review()
+stu.login()
+stu.register()
+
+#Reverse Inheritance is not possible 
+
+class Phone:
+    def __init__(self,price,brand,camera):
+        print("Inside phone condtructor")
+        self.price=price
+        self.brand=brand
+        self.camera=camera
+class SmartPhone(Phone):
+    pass
+
+s=SmartPhone(20000,"Apple",13)
+print(s.brand )
+
+#Polymorphism->Method Overriding,Method overloading,Operator Overloading
+#Method Overriding
+class Phone:
+    def __init__(self,price,brand,camera):
+        print("Inside phone constructor")
+        self.__price=price
+        self.brand=brand
+        self.camera=camera
+    def buy(self):
+        print("Buying a phone")
+class SmartPhone(Phone):
+    def buy(self):
+        print("Buying a smartphone")
+s=SmartPhone(20000,"Apple",13)
+s.buy()
+
+class Parent:
+    def __init__(self,num):
+        self.__num=num
+    def get_num(self):
+        return self.__num
+class Child(Parent):
+    def show(self):
+        print("This is in child class")
+son=Child(100)
+print(son.get_num())
+son.show()
+
+class Parent:
+    def __init__(self,num):
+        self.__num=num
+    def get_num(self):
+        return self.__num
+
+class Child(Parent):
+    def __init__(self,val,num):
+        self.__val=val
+    def get_val(self):
+        return self.__val
+    
+son=Child(100,10)
+print("Parent:num",son.get_num())
+
+#Example of Super->Super keyword parent k method and constructor koo invoke kr sakte h
+
+class Phone:
+    def __init__(self,price,brand,camera):
+        print("Inside phone constructor")
+        self.__price=price
+        self.brand=brand
+        self.camera=camera
+    def buy(self):
+        print("Buying a phone")
+class smartPhone(Phone):
+    def buy(self):
+        print("Buying a smartphone")
+        super().buy()
+s=smartPhone(20000,"Apple",13)
+s.buy()
+s.super().buy()#error
+
+
+
+
 
 
 
